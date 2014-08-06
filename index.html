@@ -22,6 +22,7 @@
 		<style type="text/css">
 			.alignLeft { text-align: left; }
 			.alignRight { text-align: right; }
+			p { text-align: left; }
 		</style>
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -129,12 +130,38 @@
 		<h2>Syntax</h2>
 		<img src="static/images/perl_syntax.png">
 	</section>
+	<section>
+		<h2>Syntax</h2>
+		<p>Syntax is made up of variables, functions, definitions, ect</p>
+		<p>Variables start with a <b>Sigil</b></p>
+		<p>A Sigil is the leading punctuation of a variable.</p>
+		<p>Actually, all variables should start with the function <b>'my'</b></p>
+		<p>Functions start with the word <b>sub</b></p>
+	</section>
 
+</section>
+<section>
 	<section>
 		<h2>Variables</h2>
+		<p>Starts with a sigil and has an identifier</p>
+		<p>'$' means <b>Scalar</b></p>
+		<p>A scalar is a single value</p>
+		<p>Can be a number, string, or reference (address)</p>
+		<p>For a scalar, the type can be dynamically assigned (unlike C,Java,ect)</p>
+	</section>
+	<section>
+	<pre><code class="perl">
+		my $var = 'some string'; #defined with 'my'
+		$var = 100;
+		$var = 'Quote\'s are messy';
+		$var = "this has a new line at the end \n"; #escape sequence
+		$var = qq/let's use a quote operator/;
+		$var = qq{same things again};
+		$var = q/'q' gives no interpolation to a $var/;
+	</code></pre>
+	<p>If you didn't notice, the q// and single quote '' don't give variable interpolation.</p>
 	</section>
 </section>
-
 
 
 
