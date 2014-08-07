@@ -50,9 +50,28 @@
 <section>
 	<h1>Getting started</h1>
 	<h3>Perl <b>IS</b> easy!</h3>
+	
 	<aside class="notes">
 		Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 	</aside>
+</section>
+
+<section>
+	<section>
+		<h2>Actually,</h2>
+		<p>Its easy if you have a good book:</p>
+		<p> <img src="static/images/beginning_perl.jpeg"></p>
+		
+		
+	</section>
+	<section>
+		<p> <img src="static/images/programming_perl.jpeg"></p>
+	</section>
+	<section>
+		<p> <img src="static/images/learning_perl.jpeg"></p>
+		<p><small><small>Note Learning Perl uses the deprecated '&amp;' function call syntax</small></small></p>
+	</section>
+
 </section>
 
 <section>
@@ -144,7 +163,7 @@
 	<section>
 		<h2>Variables</h2>
 		<p>Starts with a sigil and has an identifier</p>
-		<p>'$' means <b>Scalar</b></p>
+		<p>'$' means <b>Scalar</b> (Think $calar)</p>
 		<p>A scalar is a single value</p>
 		<p>Can be a number, string, or reference (address)</p>
 		<p>For a scalar, the type can be dynamically assigned (unlike C,Java,ect)</p>
@@ -166,7 +185,13 @@
 <section>
 	<section>
 		<h2>Arrays</h2>
-		<p></p>
+		<p>In perl, an array is an ordered list of scalars.</p>
+		<p>Prefixed with '@'. (Think @rray)</p>
+		<p>Good for storing anything if you need to preserve order<p>
+		<p>In perl they are dynamically sized<p>
+		<pre><code class="perl">
+			my @stuff = ("hello", );
+		</code></pre>
 	</section>
 </section>
 
