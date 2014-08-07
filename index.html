@@ -185,13 +185,18 @@
 <section>
 	<section>
 		<h2>Arrays</h2>
-		<p>In perl, an array is an ordered list of scalars.</p>
+		<p>In perl, an array is an ordered <b>list</b> of scalars.</p>
 		<p>Prefixed with '@'. (Think @rray)</p>
 		<p>Good for storing anything if you need to preserve order<p>
 		<p>In perl they are dynamically sized<p>
 		<pre><code class="perl">
-			my @stuff = ("hello", );
+			my @stuff = ("hello", 1, "thing");
 		</code></pre>
+		<p>The 'quote words' operator can return a list</p>
+		<pre><code class="perl">
+			my @stuff = qw/ hello 1 thing/;
+		</code></pre>
+
 	</section>
 </section>
 
