@@ -198,15 +198,43 @@
 		</code></pre>
 
 	</section>
+
 	<section>
-		<h2>Functions for Arrays</h2>
-		<p>push</p>
-		<p>pop</p>
-		<p>shift</p>
-		<p>unshift</p>
+		<p>A single element is accessed just as any scalar value:</p>
+		<pre><code class="perl">
+			print $stuff[0]; #"hello"
+			$stuff[2] = 2;
+			print "@stuff\n"; #hello 1 2
+		</code></pre>
+		<p>You can also access in values offset from the end:</p>
+		<pre><code class="perl">
+			print $stuff[-1]; # 2
+			print $stuff[-2]; # 1
+		</code></pre>
+
 	</section>
 	<section>
-		<h2>Doing stuff with arrays</h2>
+		<h2>Functions for Arrays</h2>
+		<p><u>push:</u> add element to the end</p>
+		<pre><code class="perl">
+			push(@arr, "my Item");
+		</code></pre>
+		<p><u>pop:</u> remove and return element from the end</p>
+		<pre><code class="perl">
+			my $var = pop($arr);
+		</code></pre>
+		<p><u>shift:</u> remove and return element from the beginning</p>
+		<pre><code class="perl">
+			my $var = shift(@arr);
+		</code></pre>
+		<p><u>unshift:</u> add element to the beginning</p>
+		<pre><code class="perl">
+			unshift(@arr, "more txt");
+		</code></pre>
+	</section>
+	
+	<section>
+		<h2>Doing stuff with arrays. AKA Iteration</h2>
 	</section>
 </section>
 
