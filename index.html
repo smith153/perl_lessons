@@ -99,23 +99,21 @@
 	<p>strace test6.pl</p>
 	<pre> 
 	<code>
-		execve("./test6.pl", ["./test6.pl"], [/* 51 vars */]) = 0
-		/*...a bunch of missing lines...*/
-		execve("/opt/perl/current/bin/perl", ["perl", "./test6.pl"] ) = 0
-		/*...a bunch of missing lines...*/
-		readlink("/proc/self/exe", "/opt/perl-5.20.0/bin/perl", 4095) = 25
-		/*...a bunch of missing lines...*/
-		open("./test6.pl", O_RDONLY)            = 4
-		/*...a bunch of missing lines...*/
-		read(4, "#! /usr/bin/env perl \n\n#commten\n"..., 8192) = 47
-		read(4, "", 8192)                       = 0
-		close(4) 
-		/*Perl binary is interpreting now*/
-		rt_sigaction(SIGHUP, NULL, {SIG_DFL, [], 0}, 8) = 0
-		rt_sigaction(SIGINT, NULL, {SIG_DFL, [], 0}, 8) = 0
-		/*'test6.pl' actually only prints  'test' to stdout*/
-		write(1, "test", 4)                     = 4
-
+execve("./test6.pl", ["./test6.pl"], [/* 51 vars */]) = 0
+/*...a bunch of missing lines...*/
+execve("/opt/perl/current/bin/perl", ["perl", "./test6.pl"] ) = 0
+/*Perl binary is interpreting now*/
+readlink("/proc/self/exe", "/opt/perl-5.20.0/bin/perl", 4095) = 25
+/*...a bunch of missing lines...*/
+open("./test6.pl", O_RDONLY)            = 4
+/*...a bunch of missing lines...*/
+read(4, "#! /usr/bin/env perl \n\n#commten\n"..., 8192) = 47
+read(4, "", 8192)                       = 0
+close(4) 
+rt_sigaction(SIGHUP, NULL, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, NULL, {SIG_DFL, [], 0}, 8) = 0
+/*'test6.pl' actually only prints  'test' to stdout*/
+write(1, "test", 4)                     = 4
 	</code>
 	</pre>
 	</section>
@@ -133,9 +131,9 @@
 
 	<pre> 
 	<code class="perl">
-		#! /usr/bin/env perl
-		use strict;
-		use warnings;
+	#! /usr/bin/env perl
+	use strict;
+	use warnings;
 	</code>
 	</pre>
 	<p class="alignLeft"> 
@@ -170,13 +168,13 @@
 	</section>
 	<section>
 	<pre><code class="perl">
-		my $var = 'some string'; #defined with 'my'
-		$var = 100;
-		$var = 'Quote\'s are messy';
-		$var = "this has a new line at the end \n"; #escape sequence
-		$var = qq{let's use a quote operator};
-		$var = qq{same things again};
-		$var = q{'q' gives no interpolation to a $var};
+my $var = 'some string'; #defined with 'my'
+$var = 100;
+$var = 'Quote\'s are messy';
+$var = "this has a new line at the end \n"; #escape sequence
+$var = qq{let's use a quote operator};
+$var = qq{same things again};
+$var = q{'q' gives no interpolation to a $var};
 	</code></pre>
 	<p>If you didn't notice, the q// and single quote ' don't give variable interpolation.</p>
 	</section>
@@ -190,11 +188,11 @@
 		<p>Good for storing anything if you need to preserve order<p>
 		<p>In perl they are dynamically sized<p>
 		<pre><code class="perl">
-			my @stuff = ("hello", 1, "thing");
+my @stuff = ("hello", 1, "thing");
 		</code></pre>
 		<p>The 'quote words' operator can return a list</p>
 		<pre><code class="perl">
-			my @stuff = qw/ hello 1 thing/;
+my @stuff = qw/ hello 1 thing/;
 		</code></pre>
 
 	</section>
@@ -202,14 +200,14 @@
 	<section>
 		<p>A single element is accessed just as any scalar value:</p>
 		<pre><code class="perl">
-			print $stuff[0]; #"hello"
-			$stuff[2] = 2;
-			print "@stuff\n"; #hello 1 2
+print $stuff[0]; #"hello"
+$stuff[2] = 2;
+print "@stuff\n"; #hello 1 2
 		</code></pre>
 		<p>You can also access in values offset from the end:</p>
 		<pre><code class="perl">
-			print $stuff[-1]; # 2
-			print $stuff[-2]; # 1
+print $stuff[-1]; # 2
+print $stuff[-2]; # 1
 		</code></pre>
 
 	</section>
@@ -217,24 +215,54 @@
 		<h2>Functions for Arrays</h2>
 		<p><u>push:</u> add element to the end</p>
 		<pre><code class="perl">
-			push(@arr, "my Item");
+push(@arr, "my Item");
 		</code></pre>
 		<p><u>pop:</u> remove and return element from the end</p>
 		<pre><code class="perl">
-			my $var = pop($arr);
+my $var = pop($arr);
 		</code></pre>
 		<p><u>shift:</u> remove and return element from the beginning</p>
 		<pre><code class="perl">
-			my $var = shift(@arr);
+my $var = shift(@arr);
 		</code></pre>
 		<p><u>unshift:</u> add element to the beginning</p>
 		<pre><code class="perl">
-			unshift(@arr, "more txt");
+unshift(@arr, "more txt");
 		</code></pre>
 	</section>
 	
 	<section>
-		<h2>Doing stuff with arrays. AKA Iteration</h2>
+		<h4>Doing stuff with arrays. AKA Iteration</h4>
+		<pre><code class="perl">
+for my $item (@arr){
+	print "$item\n";
+}
+		</code></pre>
+		<pre><code class="perl">
+foreach my $item (@arr){
+	print "$item\n";
+}
+		</code></pre>
+		<pre><code class="perl">
+for( my $i = 0; $i &lt; @arr; $i++){
+	print "$arr[$i]\n";
+}
+		</code></pre>
+
+		<pre><code class="perl">
+foreach my $key (keys @arr) { #later versions only
+	print "$arr[$key]\n";
+}
+		</code></pre>
+
+		<pre><code class="perl">
+while(my $item = pop(@arr) ){
+	print "$item\n";
+}
+		</code></pre>
+
+	</section>
+	<section>
 	</section>
 </section>
 
