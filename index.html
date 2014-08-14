@@ -273,13 +273,28 @@ while(my $item = pop(@arr) ){
 		<h2>Hashes</h2>
 		<p><u>Hash:</u> An unordered list of key, value pairs.</p>
 		<p>Like an array. Instead of indexing with numbers, you can use strings!</p>
+		<p>Probably the most important data structure in perl...</p>
+		<p>...Or any language for that matter.</p>
 		<pre><code class="perl">
 my %employees = (
-	'Jim' =&llt; 20,
+	'Jim' =&lt; 20,
 	'Dave' =&lt; 50,
 	'Sam' =&lt; "President",
 );
 		</code></pre>
+		<pre><code class="perl">
+print "$employees{Jim}\n";
+my $pres = $employees{Sam};
+		</code></pre>
+	</section>
+	<section>
+		<h2>Iteration</h2>
+		<pre><code class="perl">
+foreach my $key (keys %employees){
+	print "key: $key, value: $employees{$key}\n";
+}
+		</code></pre>
+
 	</section>
 </section>
 
