@@ -288,6 +288,20 @@ my $pres = $employees{Sam};
 		</code></pre>
 	</section>
 	<section>
+		<h2>Initialization</h2>
+		<p>Similar to arrays, just think in pairs.</p>
+		<pre><code class="perl">
+%hash = qw/1 2 d f/;
+
+foreach my $key (keys %hash){
+    print "key: $key, value: $hash{$key}\n";
+}
+
+#key: 1, value: 2
+#key: d, value: f
+		</code></pre>
+	</section>
+	<section>
 		<h2>Iteration</h2>
 		<pre><code class="perl">
 foreach my $key (keys %employees){
@@ -295,6 +309,16 @@ foreach my $key (keys %employees){
 }
 		</code></pre>
 
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Context</h2>
+		<p>One of the more useful features of Perl.</p>
+		<p>Means an expressions can change its value.
+		<p>Based upon what the calling code expects to receive.</p>
+		<p></p>
 	</section>
 </section>
 
