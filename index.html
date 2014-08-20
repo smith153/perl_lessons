@@ -277,9 +277,9 @@ while(my $item = pop(@arr) ){
 		<p>...Or any language for that matter.</p>
 		<pre><code class="perl">
 my %employees = (
-	'Jim' =&lt; 20,
-	'Dave' =&lt; 50,
-	'Sam' =&lt; "President",
+	'Jim' =&gt; 20,
+	'Dave' =&gt; 50,
+	'Sam' =&gt; "President",
 );
 		</code></pre>
 		<pre><code class="perl">
@@ -323,19 +323,44 @@ foreach my $key (keys %employees){
 		<p>Three different contexts: Scalar, List, Void</p>
 		<p>Stuff in <u>scalar</u> context:</p>
 		<pre><code class="perl">
-$count = @some_array;
-$var = ('one','two','three');
-$other_var = %some_hash;
+my $count = @some_array;
+my $var = ('one','two','three');
+my $other_var = %some_hash;
 		</code></pre>
 		<p>Context is determined by what is on the left hand side of the assignment operator '='</p>
 	</section>
 	<section>
 		<h2>Arrays in scalar context</h2>
 		<pre><code class="perl">
+my @things = ('one', 'more', 'time');
+my $var = @things;
+print $var; # "3"
 		</code></pre>
 		<pre><code class="perl">
+my @things = ('one', 'more', 'time');
+my %stuff = ( things =&gt; @things );
+		</code></pre>
+		<p>Actually '=&gt;' forces list context, so you need to force it: </p>
+		<pre><code class="perl">
+my @things = ('one', 'more', 'time');
+my %stuff = ( things =&gt; scalar @things );
 		</code></pre>
 	</section>
+	<section>
+		<h2>Gotchas</h2>
+		<pre><code class="perl">
+my %stuff = ( things =&gt; @things );
+		</code></pre>
+		<pre><code class="perl">
+my $things = ('one', 'more', 'time');
+print $things; # "time"
+		</code></pre>
+
+	</section>
+	<section>
+		<h2>Gotchas cont.</h2>
+	</section>
+
 </section>
 
 			</div>
