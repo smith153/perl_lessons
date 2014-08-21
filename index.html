@@ -340,11 +340,15 @@ print $var; # "3"
 my @things = ('one', 'more', 'time');
 my %stuff = ( things =&gt; @things );
 		</code></pre>
-		<p>Actually '=&gt;' forces list context, so you need to force it: </p>
+		<p>Actually '=&gt;' forces list context, so you need to force it back: </p>
 		<pre><code class="perl">
 my @things = ('one', 'more', 'time');
 my %stuff = ( things =&gt; scalar @things );
 		</code></pre>
+	</section>
+	<section>
+		<h2>List Context</h2>
+		
 	</section>
 	<section>
 		<h2>Gotchas</h2>
@@ -352,9 +356,16 @@ my %stuff = ( things =&gt; scalar @things );
 my %stuff = ( things =&gt; @things );
 		</code></pre>
 		<pre><code class="perl">
+#list in scalar context
 my $things = ('one', 'more', 'time');
 print $things; # "time"
 		</code></pre>
+		<pre><code class="perl">
+#hashes in scalar context
+my %things = (one =&gt; "more",  time =&gt; 'again');
+print scalar things; # '2/8'
+		</code></pre>
+
 
 	</section>
 	<section>
