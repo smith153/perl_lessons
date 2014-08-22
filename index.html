@@ -348,7 +348,19 @@ my %stuff = ( things =&gt; scalar @things );
 	</section>
 	<section>
 		<h2>List Context</h2>
-		
+		<p>List context is when the left side of the assignment operator expects a list</p>	
+		<pre><code class="perl">
+my @new_array = @old_array;
+		</code></pre>
+	<p>You can force list context with parentheses</p>
+		<pre><code class="perl">
+my @new_array = ("one","two","three");
+my ($item1, $item2) = @new_array;
+my ($item3) = @new_array;
+print "$item1 $item2 $item3\n";
+#one two one
+		</code></pre>
+
 	</section>
 	<section>
 		<h2>Gotchas</h2>
