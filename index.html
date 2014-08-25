@@ -360,28 +360,54 @@ my ($item3) = @new_array;
 print "$item1 $item2 $item3\n";
 #one two one
 		</code></pre>
+		<pre><code class="perl">
+my @new_array = ("one","two","three");
+my ($item1, @new_array) = @new_array; #understand the slurpy!
+		</code></pre>
 
 	</section>
 	<section>
 		<h2>Gotchas</h2>
 		<pre><code class="perl">
 my %stuff = ( things =&gt; @things );
+#'=&gt;' is always list context
 		</code></pre>
 		<pre><code class="perl">
 #list in scalar context
 my $things = ('one', 'more', 'time');
 print $things; # "time"
+#commas eval left to right
 		</code></pre>
 		<pre><code class="perl">
 #hashes in scalar context
 my %things = (one =&gt; "more",  time =&gt; 'again');
-print scalar things; # '2/8'
+print scalar %things; # '2/8'
+#kinda useless
 		</code></pre>
-
 
 	</section>
 	<section>
 		<h2>Gotchas cont.</h2>
+		<pre><code class="perl">
+my $time = localtime;
+print $time;
+#Mon Aug 25 13:37:57 2014
+
+print localtime;
+#52381325711412361 (um?)
+
+print localtime . "\n";
+#Mon Aug 25 13:41:33 2014 (alrighty then..)
+
+#no, just no
+($sec,$min,$hour,$mday,$mon,$year)=localtime(time);
+$year+=1900;
+$mon+=1;
+$date = $year . "-" . $mon . "-" . $mday . "." . $hour . ":" . $min . ":" . $sec;
+
+		</code></pre>
+
+
 	</section>
 
 </section>
