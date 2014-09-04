@@ -417,6 +417,26 @@ $date = $year . "-" . $mon . "-" . $mday . "." . $hour . ":" . $min . ":" . $sec
 		<h2>Scope</h2>
 		<p><u>Scope</u> determines what variables you can see.</p>
 		<p>It ensures variables from one part of a program don't collide with others from a different part.</p>
+		<p>Protects you from yourself and others</p>
+		<p>All variables in Perl are global unless prefixed with <u>'my'</u></p>
+		<p><u>'my'</u> will make a variable <i>lexically scopeda</i></p>
+		<p>They cease to exist outside of their scope</p>
+		<p>Can be file scoped or block scoped<p>
+	</section>
+	<section>
+		<pre><code class="perl">
+my $var1 = "this is file scoped";
+
+while( $var1 ){
+	my $other_var = "this is block scoped";
+}
+
+		</code></pre>
+		
+		<p>File scoped: if its not block scoped, then its file scoped!</p>
+		<p></p>
+		<p></p>
+		<p></p>
 	</section>
 
 </section>
