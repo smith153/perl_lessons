@@ -156,7 +156,7 @@ write(1, "test", 4)                     = 4
 		<h2>Syntax</h2>
 		<p>Syntax is made up of variables, functions, definitions, ect</p>
 		<p>Variables start with a <b>Sigil</b></p>
-		<p>A Sigil is the leading punctuation of a variable.</p>
+		<p>A Sigil is the leading punctuation of a variable. ('$', '@', ect.)</p>
 		<p>Actually, all variables should start with the function <b>'my'</b></p>
 		<p>Functions start with the word <b>sub</b></p>
 	</section>
@@ -436,14 +436,24 @@ while( $var1 ){
 	my $other_var = "this is block scoped";
 }
 
+print $other_var; # Error, variable doesn't exist
 		</code></pre>
 		
 		<p>File scoped: if its not block scoped, then its file scoped!</p>
-		<p></p>
+		<p>If a file has multiple packages, a file scoped variable will be visible from within each package.</p>
+	</section>
+
+</section>
+
+<section>
+	<section>
+		<h2>Package Variables</h2>
+		<p>If you don't specify a package name, then you are in the <u><i>Main</i></u> package.</p>
+		<p>Packages offer a different name space.</p>
+		<p>Provides a way to break a large program into separate pieces.</p>
 		<p></p>
 		<p></p>
 	</section>
-
 </section>
 
 			</div>
