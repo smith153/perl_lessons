@@ -448,11 +448,39 @@ print $other_var; # Error, variable doesn't exist
 <section>
 	<section>
 		<h2>Package Variables</h2>
-		<p>If you don't specify a package name, then you are in the <u><i>Main</i></u> package.</p>
+		<p>If you don't specify a package name, then you are in the <u><i>main</i></u> package.</p>
 		<p>Packages offer a different name space.</p>
 		<p>Provides a way to break a large program into separate pieces.</p>
-		<p></p>
-		<p></p>
+	</section>
+	<section>
+		<p>Reading variables from other packages</p>
+		<pre><code class="perl">
+#!/usr/bin/env perl
+use strict;
+package Account;
+# code 
+# and stuff
+package Account::Enterprise;
+# code and stuff
+package Account::Residential;
+# code and stuff
+my $account_num = "0123";
+
+package main;
+
+print $Account::Residential::account_num;
+		</code></pre>
+		<p>Name "Account::Residential::account_num" used only once: possible typo at test2.pl line 17.</p>
+	</section>
+	<section>
+		<p>$account_num is scoped to package. How to access it?</p>
+		<p>You could turn off 'use strict' (bad)</p>
+		<p>or define with 'our' </p>
+		<p>'our' will also be used to make class variables (vs. class instance variables) later.</p>
+		<aside class="notes">
+			Not sure were the book 'Beginning Perl' was going with this other than just to demonstrate. More on packages later.
+		</aside>
+
 	</section>
 </section>
 
