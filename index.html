@@ -76,6 +76,10 @@
 		<p> <img src="static/images/learning_perl.jpeg"></p>
 		<p><small><small>Note Learning Perl uses the deprecated '&amp;' function call syntax</small></small></p>
 	</section>
+	<section>
+		<p>Also some websites are good:</p>
+		<p><a href="http://perlmaven.com/perl-sites">http://perlmaven.com/perl-sites</a></p>
+	</section>
 
 </section>
 
@@ -487,6 +491,23 @@ print $Account::Residential::account_num;
 		<p>Another one of Perl's gotchas</p>
 		<p>"you'll love it or hate it"</p>
 		<p>Critical to understand</p>
+		<pre><code class="perl">
+my @var = qw/this:is not:a big:test/;
+
+for(  @var ){
+    my($item1,$item2) = split /:/;
+    print;
+    print "\n";
+}
+
+
+		</code></pre>
+		<pre><code class="perl">
+~$ perl test5.pl 
+this:is
+not:a
+big:test
+		</code></pre>
 		
 	</section>
 </section>
