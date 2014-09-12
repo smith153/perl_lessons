@@ -492,7 +492,7 @@ print $Account::Residential::account_num;
 		<p>"you'll love it or hate it"</p>
 		<p>Critical to understand</p>
 		<pre><code class="perl">
-my @var = qw/this:is not:a big:test/;
+my @var = qw{this:is not:a big:test};
 
 for(  @var ){
     my($item1,$item2) = split /:/;
@@ -511,7 +511,22 @@ big:test
 		
 	</section>
 	<section>
-		<p>Default variable: $_ or @_</p>
+		<p>Default variable: $_</p>
+		<p>Many built in functions will operate on $_</p>
+		
+		<table>
+		<thead>
+			<th>a</th>
+			<th>d</th>
+
+		</thead>
+		<tbody>
+			<tr>
+				<td>This</td>
+				<td>is</td>
+			</tr>
+		</tbody>
+		</table>
 	</section>
 </section>
 
