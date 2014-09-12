@@ -515,19 +515,21 @@ big:test
 		<p>Many built in functions will operate on $_</p>
 		
 		<table>
-		<thead>
-			<th>a</th>
-			<th>d</th>
-
-		</thead>
 		<tbody>
-			<tr>
-				<td>This</td>
-				<td>is</td>
-			</tr>
+			<tr> <td>$_</td> <td>Default variable</td> </tr>
+			<tr> <td>@_</td> <td>Variables passed to a function</td> </tr>
+			<tr> <td>$!</td> <td>Error messages from built-in functions</td> </tr>
+			<tr> <td>$0</td> <td>File name of your program</td> </tr>
+			<tr> <td>%ENV</td> <td>Shell environment variables</td> </tr>
+			<tr> <td>@INC</td> <td>List of places to look for perl modules (for <u>use</u> or <u>require</u></td> </tr>
+			<tr> <td>$@</td> <td>Errors trapped by <u>eval</u></td> </tr>
+			<tr> <td>$1,$2,$3,...</td> <td>Patterns captured by regex</td> </tr>
 		</tbody>
 		</table>
+		<p>And many more! <a href="http://perldoc.perl.org/perlvar.html">perldoc perlvar</a>
 	</section>
+
+
 </section>
 
 			</div>
