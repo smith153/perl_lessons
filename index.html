@@ -545,6 +545,19 @@ big:test
 	<section>
 		<p>In perl, it is easier to show you what is not true first:</p>
 		<pre><code class="perl">
+my $a1; #undef
+my $a2 = 0; #int zero
+my $a3 = "0"; #str zero
+my $a4 = ""; #undef string
+my @a5 = (); #undef array
+my %a6 = (); #undef hash
+
+if($a1 || $a2 || $a3 || $a4 || @a5 || %a6){
+    print "It's true!\n";
+}
+else{
+    print "No truth is in you\n";
+}
 		</code></pre>
 	</section>
 </section>
