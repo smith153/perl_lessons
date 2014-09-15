@@ -547,7 +547,7 @@ big:test
 		<pre><code class="perl">
 my $a1; #undef
 my $a2 = 0; #int zero
-my $a3 = "0"; #str zero
+my $a3 = "0"; #char zero
 my $a4 = ""; #undef string
 my @a5 = (); #undef array
 my %a6 = (); #undef hash
@@ -559,6 +559,68 @@ else{
     print "No truth is in you\n";
 }
 		</code></pre>
+		<p><small>If the value that you are evaluating is any thing other than the values above, then its true!</small></p>
+	</section>
+	<section>
+		<p>More on evaluating expressions and control flow:</p>
+		<pre><code class="perl">
+if( EXPRESSION ){
+
+}
+while( EXPRESSION ){
+
+}
+		</code></pre>
+		<p>What's an expression? Something that can evaluate to true or false.</p>
+	</section>
+	<section>
+		<pre><code class="perl">
+if($var1 &gt; $var2){
+	$var1++
+	$var2 = $var1;
+}
+
+		</code></pre>
+		<pre><code class="perl">
+if(defined $stuff ){
+	push(@arr, $stuff);
+}
+elsif(not defined $stuff){
+	$stuff = get_stuff_for_stuff();
+}
+else{
+	warn "Can this ever print?\n";
+}
+
+		</code></pre>
+		<pre><code class="perl">
+if(@arr &gt; 1 &amp;&amp; not defined $var){
+	$var = pop(@arr);
+}
+
+		</code></pre>
+	</section>
+	<section>
+		<p>Another Gotcha with Perl</p>
+		<p>Comparing numbers and strings are not the same!</p>
+		<p>Expression operators for strings and numericals</p>
+		<table>
+		<thead>
+			<th>String</th>
+			<th>Numeric</th>
+			<th>Desc</th>
+		</thead>
+		<tbody>
+			<tr> <td>lt</td> <td>&lt;</td><td>Less than</td> </tr>
+			<tr> <td>gt</td> <td>&gt;</td><td>Greater than</td> </tr>
+			<tr> <td>ge</td> <td>&gt;=</td><td>Greater than or equal</td> </tr>
+			<tr> <td>le</td> <td>&lt;=</td><td>Less than or equal</td> </tr>
+			<tr> <td>eq</td> <td>==</td><td>Equal</td> </tr>
+			<tr> <td>ne</td> <td>!=</td><td>Not Equal</td> </tr>
+			<tr> <td>cmp</td> <td>&lt;=&gt;</td><td>Comparison, returns -1,0,1</td> </tr>
+		</tbody>
+		</table>
+	
 	</section>
 </section>
 
