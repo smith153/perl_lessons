@@ -597,7 +597,6 @@ else{
 if(@arr &gt; 1 &amp;&amp; not defined $var){
 	$var = pop(@arr);
 }
-
 		</code></pre>
 	</section>
 	<section>
@@ -628,7 +627,26 @@ if(@arr &gt; 1 &amp;&amp; not defined $var){
 		<p>for</p>
 		<p>foreach</p>
 		<p>for and foreach are the same!</p>
+		<p>Most only use 'for' for C style for loops.</p>
 	</section>
+	<section>
+		<pre><code class="perl">
+my @numbers = qw{1 2 3 4};
+foreach my $number (@number){
+	print "$number\n";
+}
+		</code></pre>
+		<pre><code class="perl">
+#a little more implicit
+my @lines = ("line 1\n", "line 2\n");
+foreach (@lines){
+	chomp;
+	print $_;
+}
+		</code></pre>
+
+	</section>
+
 </section>
 
 			</div>
