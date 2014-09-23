@@ -647,8 +647,14 @@ foreach (@lines){
 for(my $i = 0; $i &lt; @arr; $i++){
 	print "$arr[$i]\n";
 }
-
 		</code></pre>
+		<pre><code class="perl">
+#elements are aliased but...
+foreach my $num (1,2,3,4){
+	$num++;
+}
+		</code></pre>
+
 	</section>
 
 </section>
