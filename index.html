@@ -651,14 +651,25 @@ for(my $i = 0; $i &lt; @arr; $i++){
 		<pre><code class="perl">
 #elements are aliased but...
 foreach my $num (1,2,3,4){
-	$num++;
+	$num++; //can't modify read-only
 }
+		</code></pre>
+		<pre><code class="perl">
+my @arr = (5, 6, 0, 3, 3);
+my $total = 0;
+while( my $num = pop(@arr) ){
+	$total += $num;
+}
+print "$total\n"; # 6?
 		</code></pre>
 
 	</section>
 
 </section>
 
+<section>
+	<h2>References</h2>
+</section>
 			</div>
 
 		</div>
