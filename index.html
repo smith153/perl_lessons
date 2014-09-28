@@ -678,16 +678,31 @@ print "$total\n"; # 6?
 	<section>
 		<p>Lets see some action in C first</p>
 		<pre><code class="c">
-struct List {
-
-}; 
+#include <stdio.h>
 
 int main()
 {
-
+	int a = 10;
+	int * b;
+	b = &amp;a;
+    (*b)++;  //deref and increment
+    printf("%X\n", b);  //address: 0x111EC124
+	printf("%d\n", *b); //value at address: 11
+	printf("%d\n", a); //value 11
 }
 		</code></pre>
+		<pre><code class="perl">
+my $a = 10;
+my $b;
+$b = \$a
+${$b}++
+print "$b\n";    #SCALAR(0x1f1de38)
+print "${$b}\n"; # 11
+print "$a\n";    # 11
+
+		</code></pre>
 	</section>
+
 </section>
 			</div>
 
